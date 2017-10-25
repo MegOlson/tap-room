@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  selectedKeg = null;
   newBrand: string;
   newPrice: number;
   newFlavor: string;
@@ -29,6 +30,14 @@ export class AppComponent {
     this.newPrice = "";
     this.newFlavor = "";
     this.newDescription = "";
+  }
+
+  editKeg(clickedKeg) {
+    this.selectedKeg = clickedKeg;
+  }
+
+  doneEditing() {
+    this.selectedKeg = null;
   }
 }
 

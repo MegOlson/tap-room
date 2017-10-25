@@ -11,15 +11,38 @@
     <input type="text" [(ngModel)]="newPrice" name="newPrice" class="form-control">
 
     <label for="newDescription">Description:</label>
-    <textarea type="text" [(ngModel)]="newDescription" name="newDescription" class="form-control"></textarea>
+    <textarea type="text" [(ngModel)]="newDescription" name="newDescription" class="form-control" rows="7" cols="53"></textarea>
 
     <button type="button" class="btn" (click)="addKeg()" id="addKeg">Add</button>
   </form>
-  <ol>
-    <li *ngFor="let eachKeg of kegs" class="well">
-      <h3>{{eachKeg.brand}} </h3>
-      <p>{{eachKeg.flavor}} ${{eachKeg.price}}</p>
-      <p>{{eachKeg.description}}</p>
-    </li>
-  </ol>
+  <div *ngIf="selectedKeg === null">
+    <ol>
+      <li *ngFor="let eachKeg of kegs" class="well">
+        <h3>{{eachKeg.brand}} </h3>
+        <button type="button" class="btn" (click)="editKeg(eachKeg)" id="editKeg">Edit</button>
+        <p>{{eachKeg.flavor}} ${{eachKeg.price}}</p>
+        <p>{{eachKeg.description}}</p>
+      </li>
+    </ol>
+  </div>
+  <div *ngIf="selectedKeg" class="">
+    <h3>{{selectedKeg.brand}} </h3>
+    <p>{{selectedKeg.flavor}} ${{selectedKeg.price}}</p>
+    <p>{{selectedKeg.description}}</p>
+    <form class="form-group">
+      <label for="editBrand">Brand:</label>
+      <input type="text" [(ngModel)]="selectedKeg.brand" name="editBrand" class="form-control">
+
+      <label for="editFlavor">Flavor:</label>
+      <input type="text" [(ngModel)]="selectedKeg.flavor" name="editFlavor" class="form-control">
+
+      <label for="editPrice">Price:</label>
+      <input type="text" [(ngModel)]="selectedKeg.price" name="editPrice" class="form-control">
+
+      <label for="editDescription">Description:</label>
+      <textarea type="text" [(ngModel)]="selectedKeg.description" name="editDescription" class="form-control" rows="7" cols="53"></textarea>
+
+    </form>
+    <button type="button" class="btn" (click)="doneEditing()" id="doneEditing">Done</button>
+  </div>
 </div>
