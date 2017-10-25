@@ -7,3 +7,15 @@ body {
 .btn {
   background-color: #e6ede8;
 }
+
+.equal {
+  /*background-color: rgb(45, 98, 107);*/
+  padding: 0;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+ol {
+  list-style-type: none;
+}

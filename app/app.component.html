@@ -38,8 +38,8 @@
 </div>
 <div class="jumbotron" *ngIf="displayMenu" >
   <div *ngIf="selectedKeg === null">
-    <ol>
-      <li *ngFor="let eachKeg of kegs" class="well">
+    <ol class="row equal">
+      <li *ngFor="let eachKeg of kegs" class="well col-sm-6">
         <h3>{{eachKeg.brand}} </h3>
         <button type="button" class="btn" (click)="editKeg(eachKeg)" id="editKeg">Edit</button>
         <p>{{eachKeg.flavor}} <span class="price-color">${{eachKeg.price}}</span></p>
