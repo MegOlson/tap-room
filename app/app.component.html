@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <ol>
+    <li *ngFor="let eachKeg of kegs" class="well">
+      <h2>{{eachKeg.brand}} </h2>
+      <p>{{eachKeg.flavor}} ${{eachKeg.price}}</p>
+      <p>{{eachKeg.description}}</p>
+    </li>
+  </ol>
+</div>
