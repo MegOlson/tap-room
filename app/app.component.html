@@ -54,3 +54,11 @@
     <button type="button" class="btn" (click)="doneEditing()" id="doneEditing">Done</button>
   </div>
 </div>
+<div class="showBelowTen">
+  <div *ngFor="let eachKeg of kegs">
+    <div *ngIf="eachKeg.pints <= 10">
+      <h2>Kegs under 10 pints:</h2>
+      <h3>{{eachKeg.brand}} </h3>
+    </div>
+  </div>
+</div>
