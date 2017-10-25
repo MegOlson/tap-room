@@ -2,11 +2,17 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app/app.component.html'
+  templateUrl: 'app/app.component.html',
+  styles:[`
+    .price-color {
+      color: #2a7cc7;
+    }
+    `]
 })
 
 export class AppComponent {
   selectedKeg = null;
+  kegForm: boolean = false;
   newBrand: string;
   newPrice: number;
   newFlavor: string;
@@ -30,10 +36,15 @@ export class AppComponent {
     this.newPrice = "";
     this.newFlavor = "";
     this.newDescription = "";
+    this.kegForm = false;
   }
 
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
+  }
+
+  showAddForm() {
+    this.kegForm = true;
   }
 
   doneEditing() {

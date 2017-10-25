@@ -1,4 +1,8 @@
-<div class="jumbotron">
+<div class="page-header">
+  <h1>Kombucha R' Us</h1>
+  <button type="button" class="btn" (click)="showAddForm()">Add Keg</button>
+</div>
+<div *ngIf="kegForm" class="well">
   <h2>New Keg</h2>
   <form class="form-group">
     <label for="newBrand">Brand:</label>
@@ -15,12 +19,14 @@
 
     <button type="button" class="btn" (click)="addKeg()" id="addKeg">Add</button>
   </form>
+</div>
+<div class="jumbotron">
   <div *ngIf="selectedKeg === null">
     <ol>
       <li *ngFor="let eachKeg of kegs" class="well">
         <h3>{{eachKeg.brand}} </h3>
         <button type="button" class="btn" (click)="editKeg(eachKeg)" id="editKeg">Edit</button>
-        <p>{{eachKeg.flavor}} ${{eachKeg.price}}</p>
+        <p>{{eachKeg.flavor}} <span class="price-color">${{eachKeg.price}}</span></p>
         <p>{{eachKeg.description}}</p>
       </li>
     </ol>
