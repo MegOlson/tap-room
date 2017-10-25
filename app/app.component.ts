@@ -14,9 +14,11 @@ import { Component } from '@angular/core';
       font-size: 17px;
     }
     .jumbotron, .newKeg{
-      background-color: #bfb6ac;
+      background-color: rgb(241, 245, 241);
     }
-
+    .col-sm-6 {
+      background-color: rgb(241, 245, 241);
+    }
 
     `]
 })
