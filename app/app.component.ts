@@ -44,7 +44,11 @@ export class AppComponent {
   }
 
   showAddForm() {
-    this.kegForm = true;
+    if(this.kegForm) {
+      this.kegForm = false;
+    } else {
+      this.kegForm = true;
+    }
   }
 
   doneEditing() {

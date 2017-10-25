@@ -1,7 +1,14 @@
 <div class="page-header">
-  <h1>Kombucha R' Us</h1>
-  <button type="button" class="btn" (click)="showAddForm()">Add Keg</button>
+  <nav class="navbar navbar-light bg-faded">
+    <form class="form-inline">
+      <h1>Kombucha R' Us</h1>
+      <button class="btn btn-outline-success" type="button">Menu</button>
+      <button class="btn btn-outline-success" (click)="showAddForm()" type="button">Add Keg</button>
+      <button class="btn btn-outline-success" type="button">Low Kegs</button>
+    </form>
+  </nav>
 </div>
+
 <div *ngIf="kegForm" class="well">
   <h2>New Keg</h2>
   <form class="form-group">
