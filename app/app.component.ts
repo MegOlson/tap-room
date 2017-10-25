@@ -7,12 +7,17 @@ import { Component } from '@angular/core';
     .price-color {
       color: #2a7cc7;
     }
+    .navbar-buttons {
+      margin-top: 30px;
+    }
     `]
 })
 
 export class AppComponent {
   selectedKeg = null;
   kegForm: boolean = false;
+  lowKegList: boolean = false;
+  displayMenu: boolean = false;
   newBrand: string;
   newPrice: number;
   newFlavor: string;
@@ -57,6 +62,22 @@ export class AppComponent {
 
   pourPint(clickedKeg) {
     clickedKeg.pints -= 1;
+  }
+
+  showLowKegs() {
+    if(this.lowKegList) {
+      this.lowKegList = false;
+    } else {
+      this.lowKegList = true;
+    }
+  }
+
+  showMenu() {
+    if(this.displayMenu) {
+      this.displayMenu = false;
+    } else {
+      this.displayMenu = true;
+    }
   }
 }
 

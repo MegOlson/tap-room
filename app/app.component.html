@@ -1,15 +1,29 @@
 <div class="page-header">
-  <nav class="navbar navbar-light bg-faded">
-    <form class="form-inline">
-      <h1>Kombucha R' Us</h1>
-      <button class="btn btn-outline-success" type="button">Menu</button>
-      <button class="btn btn-outline-success" (click)="showAddForm()" type="button">Add Keg</button>
-      <button class="btn btn-outline-success" type="button">Low Kegs</button>
-    </form>
-  </nav>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h1>The Kombucha Hub</h1>
+    </div>
+    <div class="col-md-4 col-md-offset-2">
+      <nav class="navbar navbar-light bg-faded">
+        <form class="form-inline">
+          <div class="navbar-buttons">
+            <button class="btn btn-outline-success" (click)="showMenu()" type="button">Menu</button>
+            <button class="btn btn-outline-success" (click)="showAddForm()" type="button">Add Keg</button>
+            <button class="btn btn-outline-success" (click)="showLowKegs()" type="button">Low Kegs</button>
+          </div>
+        </form>
+      </nav>
+    </div>
+
+  </div>
+
+
+
 </div>
 
-<div *ngIf="kegForm" class="well">
+
+<div *ngIf="kegForm" class="well" >
   <h2>New Keg</h2>
   <form class="form-group">
     <label for="newBrand">Brand:</label>
@@ -27,7 +41,7 @@
     <button type="button" class="btn" (click)="addKeg()" id="addKeg">Add</button>
   </form>
 </div>
-<div class="jumbotron">
+<div class="jumbotron" *ngIf="displayMenu" >
   <div *ngIf="selectedKeg === null">
     <ol>
       <li *ngFor="let eachKeg of kegs" class="well">
@@ -61,11 +75,13 @@
     <button type="button" class="btn" (click)="doneEditing()" id="doneEditing">Done</button>
   </div>
 </div>
-<div class="showBelowTen">
-  <div *ngFor="let eachKeg of kegs">
-    <div *ngIf="eachKeg.pints <= 10">
-      <h2>Kegs under 10 pints:</h2>
-      <h3>{{eachKeg.brand}} </h3>
+<div *ngIf="lowKegList" >
+  <div class="showBelowTen">
+    <div *ngFor="let eachKeg of kegs">
+      <div *ngIf="eachKeg.pints <= 10">
+        <h2>Kegs under 10 pints:</h2>
+        <h3>{{eachKeg.brand}} </h3>
+      </div>
     </div>
   </div>
 </div>
