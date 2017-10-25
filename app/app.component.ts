@@ -50,6 +50,10 @@ export class AppComponent {
   doneEditing() {
     this.selectedKeg = null;
   }
+
+  pourPint(clickedKeg) {
+    clickedKeg.pints -= 1;
+  }
 }
 
 export class Keg {
@@ -57,6 +61,7 @@ export class Keg {
     public brand: string,
     public price: number,
     public flavor: string,
-    public description: string
+    public description: string,
+    public pints: number = 11
   ) {}
 }

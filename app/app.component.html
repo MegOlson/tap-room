@@ -27,6 +27,8 @@
         <h3>{{eachKeg.brand}} </h3>
         <button type="button" class="btn" (click)="editKeg(eachKeg)" id="editKeg">Edit</button>
         <p>{{eachKeg.flavor}} <span class="price-color">${{eachKeg.price}}</span></p>
+        <p>Pints left: {{eachKeg.pints}}</p>
+        <button type="button" class="btn" (click)="pourPint(eachKeg)" id="pourPint">Pour Pint</button>
         <p>{{eachKeg.description}}</p>
       </li>
     </ol>
