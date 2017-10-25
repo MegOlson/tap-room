@@ -38,7 +38,7 @@ export class AppComponent {
     );
     this.kegs.push(newKeg);
     this.newBrand = "";
-    this.newPrice = "";
+    this.newPrice = null;
     this.newFlavor = "";
     this.newDescription = "";
     this.kegForm = false;
