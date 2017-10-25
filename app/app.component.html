@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div *ngIf="kegForm" class="well" >
+<div *ngIf="kegForm" class="well newKeg">
   <h2>New Keg</h2>
   <form class="form-group">
     <label for="newBrand">Brand:</label>
@@ -72,9 +72,9 @@
 </div>
 <div *ngIf="lowKegList" >
   <div class="showBelowTen">
+    <h2>Kegs under 10 pints:</h2>
     <div *ngFor="let eachKeg of kegs">
       <div *ngIf="eachKeg.pints <= 10">
-        <h2>Kegs under 10 pints:</h2>
         <h3>{{eachKeg.brand}} </h3>
       </div>
     </div>
