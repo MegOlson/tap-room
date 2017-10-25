@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: 'app/app.component.html',
   styles:[`
     .price-color {
-      color: #2a7cc7;
+      color: #326d43;
     }
     .navbar-buttons {
       margin-top: 30px;
