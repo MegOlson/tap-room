@@ -19,22 +19,7 @@
 </div>
 
 <div *ngIf="kegForm" class="well newKeg">
-  <h2>New Keg</h2>
-  <form class="form-group">
-    <label for="newBrand">Brand:</label>
-    <input type="text" [(ngModel)]="newBrand" name="newBrand" class="form-control">
-
-    <label for="newFlavor">Flavor:</label>
-    <input type="text" [(ngModel)]="newFlavor" name="newFlavor" class="form-control">
-
-    <label for="newPrice">Price:</label>
-    <input type="text" [(ngModel)]="newPrice" name="newPrice" class="form-control">
-
-    <label for="newDescription">Description:</label>
-    <textarea type="text" [(ngModel)]="newDescription" name="newDescription" class="form-control" rows="7" cols="53"></textarea>
-
-    <button type="button" class="btn" (click)="addKeg()" id="addKeg">Add</button>
-  </form>
+  <add-keg (clickSender)="addKegChild($event)"></add-keg>
 </div>
 <div class="jumbotron" *ngIf="displayMenu" >
   <div *ngIf="selectedKeg === null">

@@ -29,10 +29,7 @@ export class AppComponent {
   kegForm: boolean = false;
   lowKegList: boolean = false;
   displayMenu: boolean = false;
-  newBrand: string;
-  newPrice: number;
-  newFlavor: string;
-  newDescription: string;
+
 
   masterKegList: Keg[] = [
     new Keg("GT’s Enlightened Organic Raw Kombucha",5,"Original","I’m gonna start off by acknowledging that getting Original was a mistake. My roommate got Lavender, which was apparently more drinkable, but this flavor? Not so much. This basically tasted like a concoction of black tea and vinegar, with some floating chunks of …..? (not even sure what, it’s not on the label) thrown in the mix. For hardcore kombucha fans, though, this is a pretty good choice. Light on sugar and heavy on probiotics, GT’s definitely takes the health aspect of probiotic tea seriously."),
@@ -45,21 +42,6 @@ export class AppComponent {
     new Keg("Bucha", 3, "Blood Orange", "We give Bucha points because it's organic and contains probiotics. But it had the highest sugar content out all the kombuchas we tested, so while it's a good alternative for soda drinkers, it's likely too sweet for veteran booch lovers who are used to a more tart and tangy flavor. One tester thought it had 'a very noticeable tea flavor', while another described it as 'overly sweet.'")
   ]
 
-  addKeg() {
-    let newKeg: Keg = new Keg(
-      this.newBrand,
-      this.newPrice,
-      this.newFlavor,
-      this.newDescription
-    );
-    this.masterKegList.push(newKeg);
-    this.newBrand = "";
-    this.newPrice = null;
-    this.newFlavor = "";
-    this.newDescription = "";
-    this.kegForm = false;
-  }
-
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
   }
@@ -70,6 +52,11 @@ export class AppComponent {
     } else {
       this.kegForm = true;
     }
+  }
+
+  addKegChild(newKeg: Keg){
+    this.masterKegList.push(newKeg);
+    this.kegForm = false;
   }
 
   doneEditing() {
