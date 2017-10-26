@@ -19,7 +19,7 @@ import { Keg } from './keg.model';
 })
 
 export class MenuComponent {
-  @Input() childKegList: Keg[];
+  @Input() childKegList: Keg;
   @Output() clickSender = new EventEmitter();
 
   editButtonHasBeenClicked(kombuchaToEdit: Keg) {
