@@ -47,6 +47,8 @@ export class AppComponent {
   }
 
   showAddForm() {
+    this.lowKegList = false;
+    this.displayMenu = false;
     if(this.kegForm) {
       this.kegForm = false;
     } else {
@@ -68,6 +70,8 @@ export class AppComponent {
   // }
 
   showLowKegs() {
+    this.kegForm = false;
+    this.displayMenu = false;
     if(this.lowKegList) {
       this.lowKegList = false;
     } else {
@@ -76,6 +80,8 @@ export class AppComponent {
   }
 
   showMenu() {
+    this.kegForm = false;
+    this.lowKegList = false;
     if(this.displayMenu) {
       this.displayMenu = false;
     } else {
