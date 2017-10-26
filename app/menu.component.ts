@@ -5,6 +5,7 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'menu',
   template: `
+  <h2>Menu</h2>
   <ol class="row equal">
     <li *ngFor="let eachKeg of childKegList" class="well col-sm-6">
       <h3>{{eachKeg.brand}} </h3>
@@ -15,7 +16,12 @@ import { Keg } from './keg.model';
       <p>{{eachKeg.description}}</p>
     </li>
   </ol>
-  `
+  `,
+  styles: [`
+    h2 {
+      text-align: center;
+    }
+  `]
 })
 
 export class MenuComponent {

@@ -20,7 +20,9 @@ import { Keg } from './keg.model';
     .col-sm-6 {
       background-color: rgb(241, 245, 241);
     }
-
+    .inline {
+      display: inline;
+    }
     `]
 })
 
