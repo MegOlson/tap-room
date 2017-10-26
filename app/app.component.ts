@@ -63,9 +63,9 @@ export class AppComponent {
     this.selectedKeg = null;
   }
 
-  pourPint(clickedKeg) {
-    clickedKeg.pints -= 1;
-  }
+  // pourPint(clickedKeg) {
+  //   clickedKeg.pints -= 1;
+  // }
 
   showLowKegs() {
     if(this.lowKegList) {

@@ -32,10 +32,8 @@
 <div *ngIf="lowKegList" >
   <div class="showBelowTen">
     <h2>Kegs under 10 pints:</h2>
-    <div *ngFor="let eachKeg of kegs">
-      <div *ngIf="eachKeg.pints <= 10">
-        <h3>{{eachKeg.brand}} </h3>
-      </div>
+    <div *ngFor="let eachKeg of masterKegList | lowKeg">
+      <h3>{{eachKeg.brand}}</h3>
     </div>
   </div>
 </div>

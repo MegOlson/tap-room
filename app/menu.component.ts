@@ -25,4 +25,8 @@ export class MenuComponent {
   editButtonHasBeenClicked(kombuchaToEdit: Keg) {
     this.clickSender.emit(kombuchaToEdit);
   }
+
+  pourPint(clickedKeg) {
+    clickedKeg.pints -= 1;
+  }
 }
